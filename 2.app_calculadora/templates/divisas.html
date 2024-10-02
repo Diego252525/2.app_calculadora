@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+   <h1>Conversor Dólares A Pesos Colombianos</h1>
+   <p>Ingrese la cantidad de dólares a Pesos Colombianos.</p>
+   
+   <form action="/divisas" method="POST">
+      <div class="row">
+         <div class="col-md-6">
+            <input type="number" class="form-control" name="pesos" placeholder="Ingrese la cantidad en COP" aria-label="Ingrese la cantidad en COP" required>
+         </div>
+        
+      </div>
+      
+      <div class="row py-3">
+         <div class="col-md-12">
+            <button type="submit" class="btn btn-warning">Convertir</button>
+         </div>
+      </div>
+   </form>
+
+   {% if total_dolares is not none %}
+   <div class="row py-2">
+      <div class="col">
+         <h3>La cantidad en COP es: {{total_dolar}}</h3>
+         
+      </div>
+   </div>
+   {% endif %}
+
+{% endblock %}
